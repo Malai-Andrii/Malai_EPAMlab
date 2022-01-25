@@ -1,15 +1,12 @@
 package com.epam.spring.homework1.config;
 
-import com.epam.spring.homework1.beans.BeanA;
-import com.epam.spring.homework1.pet.Cat;
-import com.epam.spring.homework1.pet.Cheetah;
-import com.epam.spring.homework1.pet.Dog;
-import com.epam.spring.homework1.pet.Pet;
+import com.epam.spring.homework1.pet.*;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.*;
 
 @Configuration
-@Import({Pet.class, Cat.class, Dog.class, Cheetah.class})
+@ComponentScan(basePackages = "com.epam.spring.homework1.pet",
+        excludeFilters = @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, value = Spider.class))
 public class PetConfig {
     @Bean
     @Primary

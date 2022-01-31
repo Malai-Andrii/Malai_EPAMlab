@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Lazy
-public class BeanF {
+public class BeanF extends DefaultBean {
     private String name;
     private String value;
 
@@ -21,6 +21,7 @@ public class BeanF {
         return name + " - " + value;
     }
 
+    @Override
     public String getValue() {
         return value;
     }
@@ -29,6 +30,7 @@ public class BeanF {
         this.value = value;
     }
 
+    @Override
     public String getName() {
         return name;
     }

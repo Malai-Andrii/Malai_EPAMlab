@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Order(2)
-public class BeanB {
+public class BeanB extends DefaultBean {
     private String name;
     private String value;
 
@@ -35,6 +35,7 @@ public class BeanB {
         return name + " - " + value;
     }
 
+    @Override
     public String getValue() {
         return value;
     }
@@ -43,6 +44,7 @@ public class BeanB {
         this.value = value;
     }
 
+    @Override
     public String getName() {
         return name;
     }

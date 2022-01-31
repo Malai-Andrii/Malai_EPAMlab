@@ -6,7 +6,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 @Component
-public class BeanE {
+public class BeanE extends DefaultBean {
     private String name;
     private String value;
 
@@ -32,6 +32,7 @@ public class BeanE {
         return name + " - " + value;
     }
 
+    @Override
     public String getValue() {
         return value;
     }
@@ -40,6 +41,7 @@ public class BeanE {
         this.value = value;
     }
 
+    @Override
     public String getName() {
         return name;
     }

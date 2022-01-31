@@ -5,7 +5,7 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 
 @Component
-public class BeanA implements InitializingBean, DisposableBean {
+public class BeanA extends DefaultBean implements InitializingBean, DisposableBean {
     private String name;
     private String value;
 
@@ -31,6 +31,7 @@ public class BeanA implements InitializingBean, DisposableBean {
         return name + " - " + value;
     }
 
+    @Override
     public String getName() {
         return name;
     }
@@ -39,6 +40,7 @@ public class BeanA implements InitializingBean, DisposableBean {
         this.name = name;
     }
 
+    @Override
     public String getValue() {
         return value;
     }

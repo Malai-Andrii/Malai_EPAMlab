@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.Arrays;
+
 @SpringBootApplication
 public class Application {
     private static final String MY_SEPARATOR = "===================";
@@ -18,14 +20,7 @@ public class Application {
         for (String bean : context.getBeanDefinitionNames()) {
             System.out.println(bean);
         }
-        System.out.println(MY_SEPARATOR);
-        System.out.println("CONFIGURATION OF THE BEANS");
-        System.out.println(context.getBean(BeanA.class));
-        System.out.println(context.getBean(BeanB.class));
-        System.out.println(context.getBean(BeanC.class));
-        System.out.println(context.getBean(BeanD.class));
-        System.out.println(context.getBean(BeanE.class));
-        System.out.println(context.getBean(BeanF.class));
+        Arrays.stream(context.getBeanDefinitionNames()).forEach(s -> System.out.println(context.getBeanDefinition(s)));
         context.close();
     }
 }

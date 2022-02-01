@@ -8,8 +8,6 @@ import org.springframework.stereotype.Component;
 @Component
 @Order(2)
 public class BeanB extends DefaultBean {
-    private String name;
-    private String value;
 
     public BeanB() {}
 
@@ -30,26 +28,4 @@ public class BeanB extends DefaultBean {
         System.out.println("destroyMethodFor_B");
     }
 
-    @Override
-    public String toString() {
-        return name + " - " + value;
-    }
-
-    @Override
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }

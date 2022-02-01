@@ -6,9 +6,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class BeanA extends DefaultBean implements InitializingBean, DisposableBean {
-    private String name;
-    private String value;
-
     public BeanA() {}
 
     public BeanA(String name, String value) {
@@ -24,28 +21,5 @@ public class BeanA extends DefaultBean implements InitializingBean, DisposableBe
     @Override
     public void destroy() throws Exception {
         System.out.println("destroy_A");
-    }
-
-    @Override
-    public String toString() {
-        return name + " - " + value;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
     }
 }

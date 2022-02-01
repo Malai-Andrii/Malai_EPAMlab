@@ -7,9 +7,6 @@ import javax.annotation.PreDestroy;
 
 @Component
 public class BeanE extends DefaultBean {
-    private String name;
-    private String value;
-
     public BeanE() {}
 
     public BeanE(String name, String value) {
@@ -25,28 +22,5 @@ public class BeanE extends DefaultBean {
     @PreDestroy
     public void preDestroyForE() {
         System.out.println("preDestroyFor_E");
-    }
-
-    @Override
-    public String toString() {
-        return name + " - " + value;
-    }
-
-    @Override
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }
